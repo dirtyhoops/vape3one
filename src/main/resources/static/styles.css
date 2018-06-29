@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+.wrapper {
+	width: 100%;
+}
+
+.saveheader p {
+	text-align: center;
+}
+
+.saveheader {
+	background-color: rgb(238, 237, 235);
+	padding-right: 20px;
+}
+
+#logo1 {
+	height: 85px;
+}
+
+.headerlogo {
+	width: 100%;
+}
+
+.logo {
+	width: 200px;
+	margin: 0 auto;
+}
+
+.maincontent {
+	height: 500px;
+	background-color: red;
+}
+
+#logonavbar {
+	width: 105px;
+}
+
+.imagecarousel {
+	height: 500px;
+}
+
+.carousel-item img{
+	height: 500px;
+}
+
+.cartheader {
+	text-align: right;
+	padding-right: 30px;
+	margin-top: -15px;
+	margin-bottom: -3px;
+}
+
+/*.topnav {
+  position: fixed;
+  width: 100%;
+  transition: 1s;
+  z-index: 99999;
+}*/
+
+.aboutusdiv {
+	margin: 5px 15px 5px 15px;
+
+}
+
+
+#leftaboutdiv {
+	height: 750px;
+	padding-top: 10px;
+	/*background-color: green;*/
+}
+
+#rightaboutdiv {
+	height: 750px;
+	background-color: rgb(249, 250, 252);
+	padding-top: 10px;
+}
+
+.rightaboutheader, .leftaboutheader, .mapdiv h2 {
+	text-align: center;
+}
+
+	.aboutcontent p {
+		text-indent: 2em;
+}
+ 
+
+#socialmediaicondiv i {
+	font-size: 1.3em;
+}
+
+
+#socialmediaicondiv a {
+	text-decoration: none;
+	color: rgb(60, 68, 81);
+}
+
+
+#socialmediaicondiv a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+
+/*
+.footerdiv {
+	background-color: red;
+}*/
+
+/*********************FOR Eliquid shop page*********************/
+
+
+#leftnavbar {
+	height: 900px;
+	/*background-color: aqua;*/
+	padding: 20px 20px 20px 0px;
+	display: block;
+
+}
+
+#lefrnavbarmargin {
+	margin-left: 20px;
+}
+
+#itemscontentdiv {
+	height: auto;
+/*	background-color: pink;*/
+}
+
+.maincontent1 {
+	margin: 0 auto;
+	width: 98%;
+}
+
+#catergorylist ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#categoryul li {
+	border-bottom: 1px solid gray;
+	padding: 15px 0px;
+	color: black;
+}
+
+#categoryul li a{
+	color: black;
+}
+
+
+#sortdiv, #pageselectiondiv {
+	display: inline-block;
+}
+
+#itemcontainermargin {
+	padding: 20px;
+}
+
+#sortingdiv {
+	border-bottom: 1px solid gray;
+}
+
+#pageselectiondiv, #sortdiv {
+	width: 49%;
+}
+
+#pageselectiondiv {
+	text-align: right;
+}
+
+#itemscontainer {
+	width: 100%;
+	/*background-color: blue;*/
+
+}
+
+.itembox {
+	height: 320px;
+	/*background-color: yellow;*/
+	padding: 10px;
+}
+
+.itemboxpadding {
+	/*background-color: green;*/
+	height: 300px;
+	padding: 10px;
+	text-align: center;
+}
+
+.itemboxpadding p {
+	margin: -4px 0px;
+	font-size: .9em;
+}
+
+.itemimage {
+	width: 200px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding
+}
+
+.itemimage img{
+	width: 100%;
+}
+
+.itemflavor, .itempercent {
+	color: rgb(193, 196, 204);
+}
+
+
+
+/********************* FOR NEW ITEM ************************/
+#newitemform {
+	padding: 20px;
+	border-radius: 10px;
+}
+
+#newitemmaindiv {
+	margin: 10px;
+}
+
+
+
+/* for show page */
+#showpagediv {
+	width: 98%;
+	margin: 0 auto;
+}
+
+#crumb {
+	
+}
+
+#showpageleft {
+/* 	background-color: green; */
+	height: 730px;
+}
+
+#showpageright {
+/* 	background-color: red; */
+	height: 730px;
+	padding-top: 40px;
+}
+
+#imagescontainer {
+	width: 70%;
+	margin: 20px auto;
+	height: 670px;
+/* 	background-color: yellow; */
+	padding: 5px;
+}
+
+#mainimagediv {
+	width: 95%;
+	height: 60%;
+	margin:	10px auto;
+/* 	background-color: pink; */
+	text-align: center;
+}
+
+#mainimagediv img {
+	height: 100%;
+}
+
+#otherimagediv {
+	width: 95%;
+	height: 37%;
+/* 	background-color: aqua; */
+	margin: 10px auto;
+	padding-top: 5px;
+}
+
+
+/* change the height */
+.smallimagebox {
+/* 	width: 23%; */
+	height: 100px;
+	background-color: aqua;
+/* 	margin: 3px; */
+	display: inline-block;
+}
+
+#itemnamediv {
+	border-bottom: 1px solid gray;
+	margin: 10px;
+}
+
+#itemnamediv p {
+	color: gray;
+}
+
+#pricediv {
+	margin: 10px;
+	padding: 20px;
+	border-bottom: 1px solid gray;
+}
+
+#descriptioncontent {
+	text-indent: 2em;
+}
+
+#descriptiondiv {
+	padding: 10px 20px 20px 10px;
+}
+
+#descriptioncontent p {
+	font-size: .9em;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 100%;
+	}
+
+	#rightaboutdiv {
+		height: 990px;
+	}
+	
+	#leftaboutdiv {
+		height: 780px;
+	}
+	
+	#showpageright {
+		height: 820px;
+	}
+	
+	#showpageleft {
+		height: 820px;
+	}
+	
+	.smallimagebox {
+		height: 130px;
+	}
+}
+
+@media (min-width: 1200px) {
+  .container{
+      max-width: 1600px;
+  }	
+
+	#rightaboutdiv {
+		height: 750px;
+	}
+
+}
+
+
+
+
