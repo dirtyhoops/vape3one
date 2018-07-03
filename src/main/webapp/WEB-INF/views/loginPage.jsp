@@ -23,7 +23,7 @@
 	<!-- for bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-
+	
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
 		<p>Get 10% when you use the code SAVE10</p>
 	</div>
 	<div class="cartheader">
-		<p>Sign up  |  <a href="/login">Log In</a>  |  <a href="/logout">Logout</a>  |  Cart
+		<p>Sign up  |  Log In  |  Cart
 	</div>
 	<div class="headerlogo">
 		<div class="logo">
@@ -77,72 +77,29 @@
 				</nav>
 			</div>     <!-- end of navigation div -->
 
+		<div class="loginpagediv">
+			<h1>Login</h1>
+		    <p><c:out value="${error}" /></p>
+		    <form method="post" action="/login">
+		        <p>
+		            <label type="email" for="email">Email</label>
+		            <input type="text" id="email" name="email"/>
+		        </p>
+		        <p>
+		            <label for="password">Password</label>
+		            <input type="password" id="password" name="password"/>
+		        </p>
+		        <input type="submit" value="Login!"/>
+		    </form>
+		</div>
 
-
-			<div class="imagecarousel">
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-				  <div class="carousel-inner">
-				    <div class="carousel-item active">
-				      <img class="d-block w-100" src="images/car1.jpg" alt="First slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block w-100" src="images/car2.jpg" alt="Second slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block w-100" src="images/car3.jpg" alt="Third slide">
-				    </div>
-				    <div class="carousel-item">
-				      <img class="d-block w-100" src="images/car4.jpg" alt="Third slide">
-				    </div>
-				  </div>
-				  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
-				</div>
-			</div>
-
-
-			<div class="aboutusdiv">
-				<div class="row">
-					<div id="leftaboutdiv" class="col-lg-6 col-md-12 col-sm-12">
-						<div class="leftaboutheader">
-							<h2>About Us</h2>
-						</div>
-						<div class="aboutcontent">
-							<p>Vape3one started as a group of friends wanting to help people quit smoking. Vape3One started off as a business catered to help friends and family quit smoking, a delivery service was started to help educate and provide vapes, accessories, and e-liquid to anyone wanting to quit smoking cigarettes. From there Vape3One developed a partnership with the Blue Fin on Cannery Row to sell the products inside of their location. Then they were able to grow the Vape community and open this shop in Marina, California.
-							</p>
-
-							<p>Vape3one is the first exclusive Vape shop on the Monterey Peninsula, specializing in vapes, e-cigarettes, mods, personal vaporizers, variable voltage devices, atomizers, cartomizers, tanks, rebuildable coils, wick, wire, with the largest selection of e-liquid.  VAPE3ONE's goal is to help smokers quit the habit of smoking cigarettes to provide a better and healthier alternative.</p>
-						</div>
-						<div class="mapdiv">
-							<h2>Where are we Located?</h2>
-							<div style="width: 100%">
-								<iframe width="100%" height="375" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=36.6831113, -121.80339800000002&amp;q=3074%20Del%20Monte%20Blvd%2C%20Marina%2C%20CA%2093933+(Vape3One)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Google map generator</a></iframe>
-							</div>
-
-						</div>
-					</div>
-
-					<div id="rightaboutdiv" class="col-lg-6 col-md-12 col-sm-12">
-						<div class="rightaboutheader">
-							<h2>Instagram</h2>
-						</div>
-						<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-						<div id="instafeed" class="elfsight-app-e32bad01-d7db-4817-93f0-ad855cb2f20a"></div>
-					</div>
-				</div>
-			</div>
+		
 
 
 
 
 
-			<!-- FOOTER!!!!!!! -->
+		<!-- FOOTER!!!!!!! -->
 		<div class="footerdiv">
 			<!-- Footer -->
 			<footer class="page-footer font-small blue-grey lighten-5 mt-4">
@@ -277,7 +234,7 @@
 
 
 
-		</div> <!-- end of wrapper div  -->
-	</div>   <!-- end of container div -->
+	</div> <!-- end of wrapper div  -->
+</div>   <!-- end of container div -->
 </body>
 </html>
