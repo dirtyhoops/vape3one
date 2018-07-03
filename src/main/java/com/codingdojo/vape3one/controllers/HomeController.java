@@ -87,13 +87,15 @@ public class HomeController {
         	session.setAttribute("userId", u.getId());
         	session.setAttribute("isLoggedIn", "yes");
         	System.out.println("isadmin = " + u.getIsAdmin());
-        	String user1 = u.getIsAdmin();
-        	System.out.println("user1 = " + user1);
-        	
-        	if(user1.equals("yes")) {
+        	String user1 = u.getIsAdmin();    	
+        	if(user1 != null) {
         		session.setAttribute("isadmin", "yes");
-        	} 
-        	return "views/index.jsp";
+            	System.out.println("usersession isadmin = " + session.getAttribute("isadmin"));
+        		return "views/index.jsp";
+        	} else {
+        		System.out.println("usersession isadmin = " + session.getAttribute("isadmin"));
+        		return "views/index.jsp";
+        	}
         } else {
         	model.addAttribute("error", "Invalid Credentials. Please try again.");
         	return "views/loginPage.jsp";
@@ -126,7 +128,7 @@ public class HomeController {
 	public String adminPage(HttpSession session) {
     	
 		System.out.println("isloggedin: " + session.getAttribute("isLoggedIn") + ", and isAdmin: " + session.getAttribute("isadmin"));
-		if(session.getAttribute("isadmin") == "yes") {
+		if(session.getAttribute("isadmin") != null) {
 			return ("views/admin.jsp");	
 		} else {
 			return "redirect:/";
@@ -234,9 +236,10 @@ public class HomeController {
     }
 	
 	@RequestMapping("/items/{id}")
-	public String showItem(Model model, @PathVariable("id") Long id) {
+	public String showItem(Model model, @PathVariable("id") Long id, HttpSession session) {
 		Item item = itemService.getItem(id);
 		model.addAttribute("showitem", item);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/showItem.jsp");
 	}
 	

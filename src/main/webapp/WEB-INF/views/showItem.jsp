@@ -90,15 +90,15 @@
 							</div>
 							<div id="otherimagediv">
 								<div class="row">
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"></div>
-								</div>
+									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image}"/>"></div>
+									<c:if test="${(showitem.image1).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image1}"/>"></div></c:if>
+									<c:if test="${(showitem.image2).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image2}"/>"></div></c:if>
+									<c:if test="${(showitem.image3).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image3}"/>"></div></c:if>
+									<c:if test="${(showitem.image4).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image4}"/>"></div></c:if>
+									<c:if test="${(showitem.image5).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image5}"/>"></div></c:if>
+									<c:if test="${(showitem.image6).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image6}"/>"></div></c:if>
+									<c:if test="${(showitem.image7).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image7}"/>"></div></c:if>
+								 </div>
 							</div>
 						</div>
 					</div>
@@ -114,6 +114,30 @@
 							</div>
 							<div id="pricediv">
 								<h3>Price: $<c:out value="${showitem.price}"/></h3>
+								<div class="addtocartdiv">
+									<c:if test="${showitem.flavor != null}">
+										<p>Flavor: <c:out value="${showitem.flavor}"/></p>
+									</c:if>
+									<form action="#">
+										<c:if test="${showitem.type == 'eliquid'}">
+											<label>Nicotine Level: </label>
+											<select name="nicotinelevel">
+												<option value="0mg">0mg</option>
+												<option value="6mg">6mg</option>
+												<option value="12mg">12mg</option>
+											</select>
+											<br>
+										</c:if>
+										<label>Quantity:</label>
+										<input type="number" value="1" name="quantityorder"  style="width: 2em"><br>
+										<button class="btn btn-dark btn-sm">Add to Cart</button>
+									</form>
+									<c:if test="${amiadmin == 'yes'}">
+										<div class="adminbuttons">
+											<button class="btn btn-success btn-sm">Edit Item</button><button class="btn btn-danger btn-sm">Delete Item</button>
+										</div>
+									</c:if>
+								</div>
 							</div>
 							<div id="descriptiondiv">
 								<div id="descriptionheader">

@@ -282,9 +282,25 @@ body {
 .smallimagebox {
 /* 	width: 23%; */
 	height: 100px;
-	background-color: aqua;
+	padding: 2px;
+/*  	background-color: aqua; */ 
 /* 	margin: 3px; */
 	display: inline-block;
+}
+
+.smallimagebox img {
+	height: 99.5%;
+	width: 99.5%;
+	border: 1px solid gray;
+/* 	margin: 0 auto; */
+}
+
+.adminbuttons {
+	margin-top: 10px;
+}
+
+.adminbuttons button {
+	margin-right: 5px;
 }
 
 #itemnamediv {
@@ -295,6 +311,7 @@ body {
 #itemnamediv p {
 	color: gray;
 }
+
 
 #pricediv {
 	margin: 10px;
@@ -313,6 +330,28 @@ body {
 #descriptioncontent p {
 	font-size: .9em;
 }
+
+.addtocartdiv {
+	margin: 10px 0px 10px 10px;
+}
+
+.itemtypesdiv {
+	width: 100%;
+	
+}
+
+.itemtypecontainer {
+	height: 200px;
+	background-color: yellow;
+}
+
+
+
+
+
+
+
+
 
 
 
