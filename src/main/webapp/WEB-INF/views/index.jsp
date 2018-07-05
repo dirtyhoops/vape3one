@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="/styles.css">
+	<link rel="stylesheet" type="text/css" href="/styles.css">	
 </head>
 <body>
 	<div class="saveheader">
@@ -43,7 +43,7 @@
 		<div class="wrapper">
 
 
-			<div class="navigation">
+			<div class="navigation" id="navigationid">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				  <a class="navbar-brand" href="/"><img id="logonavbar" src="/images/vape3onetransparent.png" alt="" /></a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,10 +107,32 @@
 			</div>
 			
 			<div class="itemtypesdiv">
-				<div class="itemtypecontainer col-lg-3 col-md-4 col-sm-6"></div>
-				<div class="itemtypecontainer col-lg-3 col-md-4 col-sm-6"></div>
-				<div class="itemtypecontainer col-lg-3 col-md-4 col-sm-6"></div>
-				<div class="itemtypecontainer col-lg-3 col-md-4 col-sm-6"></div>
+				<div class="row">
+					<div class="itemtypecontainer col-lg-3 col-md-6 col-sm-6">
+						<div class="itemtypebox">
+							<h3>Shop Devices</h3>
+							<a href="/devices"><img src="images/itemtype4.jpg" alt=""></a>
+						</div>
+					</div>
+					<div class="itemtypecontainer col-lg-3 col-md-6 col-sm-6">
+						<div class="itemtypebox">
+							<h3>Shop E-Liquids</h3>
+							<a href="/eliquids"><img src="images/itemtype5.jpg" alt=""></a>
+						</div>
+					</div>
+					<div class="itemtypecontainer col-lg-3 col-md-6 col-sm-6">
+						<div class="itemtypebox">
+							<h3>Shop Tanks</h3>
+							<a href="tanks"><img src="images/itemtype2.jpg" alt=""></a>
+						</div>
+					</div>
+					<div class="itemtypecontainer col-lg-3 col-md-6 col-sm-6">
+						<div class="itemtypebox">
+							<h3>Shop Accessories</h3>
+							<a href="/accessories"><img src="images/itemtype3.jpg" alt=""></a>
+						</div>
+					</div>
+				</div>
 			</div>
 
 

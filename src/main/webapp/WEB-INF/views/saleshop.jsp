@@ -124,7 +124,21 @@
 								<div class="itembox col-lg-3 col-md-6 col-sm-6">
 									<div class="itemboxpadding">
 										<div class="itemimage">
+										<!-- shows the admin if the item is less than 3 -->
+										<c:if test="${amiadmin == 'yes' && sale.quantity < 4 }">
+										<div class="lowitemred">LOW QTY ITEM</div>
+										</c:if>
 											<a href="/items/${sale.id}"><img src="${sale.image}" alt=""></a>
+											<div class="overlay">
+												<div class="itemimagecontent">
+													<a class="btn btn-dark btn-sm" href="/items/${sale.id}">View Item</a>
+													<!-- shows the edit and delete for admin user -->
+													<c:if test="${amiadmin == 'yes'}">
+														<a class="btn btn-danger btn-sm" href="/items/${sale.id}/deletethisitem">Delete Item</a>
+														<a class="btn btn-primary btn-sm" href="/items/${sale.id}/editthisitem/">Edit Item</a>
+													</c:if>
+												</div>
+											</div>
 										</div>
 										<p class="itemname">${sale.name}</p>
 										<p class="itemprice">$${sale.price}</p>

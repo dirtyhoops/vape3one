@@ -114,7 +114,7 @@ body {
 	background-color: red;
 }*/
 
-/*********************FOR Eliquid shop page*********************/
+/*********************FOR SHOP PAGES*********************/
 
 
 #leftnavbar {
@@ -203,7 +203,7 @@ body {
 	width: 200px;
 	margin: 0 auto;
 	margin-bottom: 10px;
-	padding
+	
 }
 
 .itemimage img{
@@ -214,6 +214,35 @@ body {
 	color: rgb(193, 196, 204);
 }
 
+
+
+.itemimagecontent {
+	position:absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 4% auto;
+	height: 90%;
+	width: 94%;
+	opacity: 0;
+	transition: .5s ease;
+	background: rgba(242, 242, 242, 0.3);
+}
+
+.itemimage:hover .overlay {
+	opacity: 1;
+}
 
 
 /********************* FOR NEW ITEM ************************/
@@ -291,7 +320,7 @@ body {
 .smallimagebox img {
 	height: 99.5%;
 	width: 99.5%;
-	border: 1px solid gray;
+	border: 1px solid rgb(237, 238, 239);
 /* 	margin: 0 auto; */
 }
 
@@ -337,13 +366,50 @@ body {
 
 .itemtypesdiv {
 	width: 100%;
+	margin: 10px auto;
+	border-bottom: 1px solid gray;
 	
 }
 
 .itemtypecontainer {
-	height: 200px;
-	background-color: yellow;
+	height: 100%;
+	margin: 10px 0;
+	display: inline-block;
+/* 	background-color: pink; */
 }
+
+
+.itemtypebox img{
+	border: 1px solid rgb(164, 168, 173);
+	width: 100%;
+	height: 100%;
+}
+
+.itemtypebox h3 {
+	position: absolute;
+	margin: 10px;
+	color: white;
+	background-color: rgb(2, 2, 2);
+	padding: 3px 7px;
+	border-radius: 5px;
+}
+
+.lowitemred {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 80%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	color: white;
+}
+
+.itemimagecontent .btn {
+	margin-top: 10px;
+}
+
+
+
 
 
 
@@ -384,6 +450,7 @@ body {
 	.smallimagebox {
 		height: 130px;
 	}
+	
 }
 
 @media (min-width: 1200px) {

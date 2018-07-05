@@ -168,9 +168,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/sales")
-	public String showAllSales(Model model) {
+	public String showAllSales(Model model, HttpSession session) {
 		List<Item> allsales = itemService.getAllSaleItems("yes");
 		model.addAttribute("allsales", allsales);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/saleshop.jsp");
 	}
 	

@@ -18,13 +18,37 @@
 	<!-- jquery and js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script src="navshrink.js"></script>
 
 	<!-- for bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/styles.css">
+	
+	
+	<!-- script for the image gallery -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.smallimagebox img').on ({
+				mouseover: function() {
+					$(this).css({
+						'cursor': 'pointer'
+				/* 		'border-Color': 'pink'; */
+					});
+				}, 
+				mouseout: function() {
+					$(this).css({
+						'cursor': 'default'
+/* 						'border-Color': 'black' */
+					});
+				},
+				click: function() {
+					var imageUrl = $(this).attr('src');
+					$('#mainImage').attr('src', imageUrl);
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 	<div class="saveheader">
@@ -86,18 +110,18 @@
 					<div id="showpageleft" class="col-lg-6 col-md-12 col-sm-12">
 						<div id="imagescontainer">
 							<div id="mainimagediv" class="border border-light">
-								<img src="<c:out value="${showitem.image}"/>" alt="">
+								<img id="mainImage" src="<c:out value="${showitem.image}"/>" alt="">
 							</div>
 							<div id="otherimagediv">
 								<div class="row">
-									<div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image}"/>"></div>
-									<c:if test="${(showitem.image1).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image1}"/>"></div></c:if>
-									<c:if test="${(showitem.image2).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image2}"/>"></div></c:if>
-									<c:if test="${(showitem.image3).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image3}"/>"></div></c:if>
-									<c:if test="${(showitem.image4).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image4}"/>"></div></c:if>
-									<c:if test="${(showitem.image5).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image5}"/>"></div></c:if>
-									<c:if test="${(showitem.image6).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image6}"/>"></div></c:if>
-									<c:if test="${(showitem.image7).length() > 1}"><div class="smallimagebox border border-light col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image7}"/>"></div></c:if>
+									<div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image}"/>"></div>
+									<c:if test="${(showitem.image1).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image1}"/>"></div></c:if>
+									<c:if test="${(showitem.image2).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image2}"/>"></div></c:if>
+									<c:if test="${(showitem.image3).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image3}"/>"></div></c:if>
+									<c:if test="${(showitem.image4).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image4}"/>"></div></c:if>
+									<c:if test="${(showitem.image5).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image5}"/>"></div></c:if>
+									<c:if test="${(showitem.image6).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image6}"/>"></div></c:if>
+									<c:if test="${(showitem.image7).length() > 1}"><div class="smallimagebox col-lg-3 col-md-4 col-sm-4"><img src="<c:out value="${showitem.image7}"/>"></div></c:if>
 								 </div>
 							</div>
 						</div>
