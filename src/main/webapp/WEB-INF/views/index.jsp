@@ -25,13 +25,46 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/styles.css">	
+	
+	<script type="text/javascript">
+		$(window).scroll(function() {
+			var scrollPos = $(this).scrollTop();
+			
+			if(scrollPos > 20) {
+				$('#navigation1').addClass('fixed-nav');
+				$('#navigation').removeClass('container');
+			} else {
+				$('#navigation1').removeClass('fixed-nav');
+				$('#navigation').addClass('container');
+			}
+		});
+	
+	</script>
+	
+	
 </head>
 <body>
+
 	<div class="saveheader">
 		<p>Get 10% when you use the code SAVE10</p>
 	</div>
+<div id="navigation1">
 	<div class="cartheader">
-		<p>Sign up  |  <a href="/login">Log In</a>  |  <a href="/logout">Logout</a>  |  Cart
+
+		<c:if test="${amiadmin == 'yes' }">
+			<a href="/admin">Admin Page |</a>
+		</c:if>
+		<a href="/registration">Sign Up</a> |  
+		<c:if test="${isloggedin == null }">
+			<a href="/login">Log In</a>
+		</c:if> 
+		<c:if test="${isloggedin == 'yes' }">
+			<a href="/logout">Logout</a>
+		</c:if>
+		
+		<!-- change this to a cart icon -->
+		<a href="/cart">  |  Cart</a>
+
 	</div>
 	<div class="headerlogo">
 		<div class="logo">
@@ -39,11 +72,11 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="wrapper">
 
 
-			<div class="navigation" id="navigationid">
+
+
+			<div id="navigation"  class="container">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				  <a class="navbar-brand" href="/"><img id="logonavbar" src="/images/vape3onetransparent.png" alt="" /></a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +110,9 @@
 				</nav>
 			</div>     <!-- end of navigation div -->
 
-
+</div>
+		<div class="wrapper">
+	<div class="container">
 
 			<div class="imagecarousel">
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

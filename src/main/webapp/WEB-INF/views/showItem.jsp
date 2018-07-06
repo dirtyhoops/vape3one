@@ -156,11 +156,21 @@
 										<input type="number" value="1" name="quantityorder"  style="width: 2em"><br>
 										<button class="btn btn-dark btn-sm">Add to Cart</button>
 									</form>
-									<c:if test="${amiadmin == 'yes'}">
-										<div class="adminbuttons">
-											<button class="btn btn-success btn-sm">Edit Item</button><button class="btn btn-danger btn-sm">Delete Item</button>
-										</div>
-									</c:if>
+									
+									<div class="adminbuttons">
+										<c:if test="${amiadmin == 'yes'}">
+											<div class="adminbutton1">
+												<form action="/items/${showitem.id}/deletethisitem" method="post">
+													<input type="hidden" name="_method" value="delete">
+		    										<input type="submit" value="Delete Item" class="btn btn-danger btn-sm">
+												</form>
+											</div>
+											<div class="adminbutton2">
+												<%-- <a class="btn btn-danger btn-sm" href="/items/${sale.id}/deletethisitem">Delete Item</a> --%>
+												<a class="btn btn-primary btn-sm" href="/items/${shoitem.id}/editthisitem/">Edit Item</a>
+											</div>
+										</c:if>
+									</div>
 								</div>
 							</div>
 							<div id="descriptiondiv">

@@ -27,6 +27,7 @@ body {
 
 .headerlogo {
 	width: 100%;
+	background-color: white;
 }
 
 .logo {
@@ -56,6 +57,7 @@ body {
 	padding-right: 30px;
 	margin-top: -15px;
 	margin-bottom: -3px;
+	background-color: white;
 }
 
 /*.topnav {
@@ -64,6 +66,22 @@ body {
   transition: 1s;
   z-index: 99999;
 }*/
+
+.fixed-nav {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	transition: .5s;
+	padding-top: 15px;
+}
+
+#navigation1 {
+	width: 100%;
+}
+
+
+
+
 
 .aboutusdiv {
 	margin: 5px 15px 5px 15px;
@@ -222,7 +240,6 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: #fff;
-	text-transform: uppercase;
 	font-size: 18px;
 }
 
@@ -408,6 +425,14 @@ body {
 	margin-top: 10px;
 }
 
+
+.adminbutton1, .adminbutton2 {
+	display: inline-block;
+}
+
+.adminbutton2 {
+	vertical-align: top;	
+}
 
 
 

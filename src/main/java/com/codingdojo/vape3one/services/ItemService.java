@@ -59,8 +59,15 @@ public class ItemService {
 		} else {
 			return null;
 		}
-		
-		
+	}
+	
+	
+	public void updateItem(Item i) {
+		itemRepo.save(i);
+	}
+	
+	public void deleteItem(Long id) {
+		itemRepo.deleteById(id);
 	}
 
 	

@@ -120,7 +120,25 @@
 								<div class="itembox col-lg-3 col-md-6 col-sm-6">
 									<div class="itemboxpadding">
 										<div class="itemimage">
-											<img src="${tank.image}" alt="">
+											<!-- shows the admin if the item is less than 3 -->
+											<c:if test="${amiadmin == 'yes' && tank.quantity < 4 }">
+												<div class="lowitemred">LOW QTY ITEM</div>
+											</c:if>
+											<a href="/items/${tank.id}"><img src="${tank.image}" alt=""></a>
+											<div class="overlay">
+												<div class="itemimagecontent">
+													<a class="btn btn-dark btn-sm" href="/items/${tank.id}">View Item</a>
+													<!-- shows the edit and delete for admin user -->
+													<c:if test="${amiadmin == 'yes'}">
+														<form action="/items/${tank.id}/deletethisitem" method="post">
+															<input type="hidden" name="_method" value="delete">
+				    										<input type="submit" value="Delete Item" class="btn btn-danger btn-sm">
+														</form>
+														<%-- <a class="btn btn-danger btn-sm" href="/items/${tank.id}/deletethisitem">Delete Item</a> --%>
+														<a class="btn btn-primary btn-sm" href="/items/${tank.id}/editthisitem/">Edit Item</a>
+													</c:if>
+												</div>
+											</div>
 										</div>
 										<p class="itemname">${tank.name}</p>
 										<p class="itemprice">$${tank.price}</p>

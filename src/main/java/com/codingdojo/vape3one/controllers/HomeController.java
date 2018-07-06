@@ -91,10 +91,10 @@ public class HomeController {
         	if(user1 != null) {
         		session.setAttribute("isadmin", "yes");
             	System.out.println("usersession isadmin = " + session.getAttribute("isadmin"));
-        		return "views/index.jsp";
+        		return "redirect:/";
         	} else {
         		System.out.println("usersession isadmin = " + session.getAttribute("isadmin"));
-        		return "views/index.jsp";
+        		return "redirect:/";
         	}
         } else {
         	model.addAttribute("error", "Invalid Credentials. Please try again.");
@@ -121,6 +121,9 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String index(Model model, HttpSession session) {
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
+		
 		return ("views/index.jsp");
 	}
 	
@@ -140,30 +143,34 @@ public class HomeController {
 	
 	
 	@RequestMapping("/eliquids")
-	public String eliquid(Model model) {
+	public String eliquid(Model model, HttpSession session) {
 		List<Item> alleliquids = itemService.getAllItems("eliquid");
 		model.addAttribute("alleliquids", alleliquids);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/eliquidshop.jsp");
 	}
 	
 	@RequestMapping("/devices")
-	public String showAllDevices(Model model) {
+	public String showAllDevices(Model model, HttpSession session) {
 		List<Item> alldevices = itemService.getAllItems("device");
 		model.addAttribute("alldevices", alldevices);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/deviceshop.jsp");
 	}
 	
 	@RequestMapping("/tanks")
-	public String showAllTanks(Model model) {
+	public String showAllTanks(Model model, HttpSession session) {
 		List<Item> alltanks = itemService.getAllItems("tank");
 		model.addAttribute("alltanks", alltanks);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/tanksshop.jsp");
 	}
 
 	@RequestMapping("/accessories")
-	public String showAllAccessories(Model model) {
+	public String showAllAccessories(Model model, HttpSession session) {
 		List<Item> allaccessories = itemService.getAllItems("accessory");
 		model.addAttribute("allaccessories", allaccessories);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/accessoryshop.jsp");
 	}
 	
@@ -182,6 +189,7 @@ public class HomeController {
 		if(session.getAttribute("isadmin") == "yes") {
 		return ("views/newDevice.jsp");
 		} else {
+			System.out.println("not an admin cant add new item");
 			return "redirect:/";
 		}
 	}
@@ -222,17 +230,19 @@ public class HomeController {
 		
 	
 	@RequestMapping("/sales/{itemtype}")
-    public String saleItem(@PathVariable("itemtype") String itemtype1, Model model) {
+    public String saleItem(@PathVariable("itemtype") String itemtype1, Model model, HttpSession session) {
 	 	List<Item> allsales = itemService.getSaleItems(itemtype1);
 		model.addAttribute("allsales", allsales);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/saleshop.jsp");
     }
 	
 	
 	@RequestMapping("/accessories/{accessorytype}")
-    public String accessoryType(@PathVariable("accessorytype") String accessorytype1, Model model) {
+    public String accessoryType(@PathVariable("accessorytype") String accessorytype1, Model model, HttpSession session) {
 	 	List<Item> allaccessories = itemService.getAccessoryItems(accessorytype1);
 		model.addAttribute("allaccessories", allaccessories);
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/accessoryshop.jsp");
     }
 	
@@ -245,6 +255,11 @@ public class HomeController {
 	}
 	
 	
+    @RequestMapping(value="/items/{id}/deletethisitem", method=RequestMethod.DELETE)
+    public String destroy(@PathVariable("id") Long id) {
+    	itemService.deleteItem(id);
+    	return "redirect:/sales";
+    }
 	
-	
+
 }
