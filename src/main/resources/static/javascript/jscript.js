@@ -5,9 +5,13 @@ $(window).scroll(function() {
 	if(scrollPos > 20) {
 		$('#navigation1').addClass('fixed-nav');
 		$('#navigation').removeClass('container');
+		$('#wrapper1').addClass('addtopmargin');
+//		$('#maincontentid').addClass('addtopmargin');
 	} else {
 		$('#navigation1').removeClass('fixed-nav');
 		$('#navigation').addClass('container');
+		$('#wrapper1').removeClass('addtopmargin');
+//		$('#maincontentid').addClass('addtopmargin');
 	}
 });
 

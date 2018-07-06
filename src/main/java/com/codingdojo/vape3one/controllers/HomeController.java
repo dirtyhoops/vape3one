@@ -34,24 +34,33 @@ public class HomeController {
 	
 ////////////////////for login and registration/////////////////////////////
 	@RequestMapping("/registration")
-    public String registerForm(@ModelAttribute("user") User user) {
-        return "views/registrationPage.jsp";
+    public String registerForm(@ModelAttribute("user") User user, HttpSession session, Model model) {
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
+		return "views/registrationPage.jsp";
     }
 	
 //	for adminregistration
 	@RequestMapping("/registrationadmin")
-    public String registerFormAdmin(@ModelAttribute("user") User user) {
-        return "views/registrationPageAdmin.jsp";
+    public String registerFormAdmin(@ModelAttribute("user") User user, Model model, HttpSession session) {
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
+		return "views/registrationPageAdmin.jsp";
     }
 	
     @RequestMapping("/login")
-    public String login() {
-        return "views/loginPage.jsp";
+    public String login(HttpSession session) {
+    	String isloggedin = (String) session.getAttribute("isLoggedIn");
+    	if(isloggedin == "yes") {
+    		return "redirect:/";
+    	} else {
+    		return "views/loginPage.jsp";
+    	}
     }
     
     @RequestMapping(value="/registrationadmin", method=RequestMethod.POST)
     public String registerAdmin(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        userValidator.validate(user, result);
+    	userValidator.validate(user, result);
         if(result.hasErrors()) {
             return "views/registrationPageAdmin.jsp";
         } else {
@@ -69,7 +78,7 @@ public class HomeController {
     
     @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-        userValidator.validate(user, result);
+    	userValidator.validate(user, result);
         if(result.hasErrors()) {
             return "views/registrationPage.jsp";
         }
@@ -128,8 +137,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/admin")
-	public String adminPage(HttpSession session) {
-    	
+	public String adminPage(HttpSession session, Model model) {
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		System.out.println("isloggedin: " + session.getAttribute("isLoggedIn") + ", and isAdmin: " + session.getAttribute("isadmin"));
 		if(session.getAttribute("isadmin") != null) {
 			return ("views/admin.jsp");	
@@ -146,6 +156,7 @@ public class HomeController {
 	public String eliquid(Model model, HttpSession session) {
 		List<Item> alleliquids = itemService.getAllItems("eliquid");
 		model.addAttribute("alleliquids", alleliquids);
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/eliquidshop.jsp");
 	}
@@ -154,6 +165,7 @@ public class HomeController {
 	public String showAllDevices(Model model, HttpSession session) {
 		List<Item> alldevices = itemService.getAllItems("device");
 		model.addAttribute("alldevices", alldevices);
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/deviceshop.jsp");
 	}
@@ -162,6 +174,7 @@ public class HomeController {
 	public String showAllTanks(Model model, HttpSession session) {
 		List<Item> alltanks = itemService.getAllItems("tank");
 		model.addAttribute("alltanks", alltanks);
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/tanksshop.jsp");
 	}
@@ -170,6 +183,7 @@ public class HomeController {
 	public String showAllAccessories(Model model, HttpSession session) {
 		List<Item> allaccessories = itemService.getAllItems("accessory");
 		model.addAttribute("allaccessories", allaccessories);
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/accessoryshop.jsp");
 	}
@@ -178,6 +192,7 @@ public class HomeController {
 	public String showAllSales(Model model, HttpSession session) {
 		List<Item> allsales = itemService.getAllSaleItems("yes");
 		model.addAttribute("allsales", allsales);
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		return ("views/saleshop.jsp");
 	}
@@ -185,7 +200,9 @@ public class HomeController {
 
 //MAKE SURE THAT YOU HAVE AN ADMIT VALIDATION THAT THE USER CAN ONLY GO TO THIS LINK IF THEYRE THE ADMIN.	
 	@RequestMapping("/newdevice")
-	public String newDevice(@ModelAttribute("device") Item item, HttpSession session) {
+	public String newDevice(@ModelAttribute("device") Item item, HttpSession session, Model model) {
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		if(session.getAttribute("isadmin") == "yes") {
 		return ("views/newDevice.jsp");
 		} else {
@@ -195,7 +212,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/new")
-	public String newitem(@ModelAttribute("item") Item item, HttpSession session) {
+	public String newitem(@ModelAttribute("item") Item item, HttpSession session, Model model) {
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
+		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
 		if(session.getAttribute("isadmin") == "yes") {
 		return ("views/newitem.jsp");
 		} else {
@@ -234,6 +253,7 @@ public class HomeController {
 	 	List<Item> allsales = itemService.getSaleItems(itemtype1);
 		model.addAttribute("allsales", allsales);
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		return ("views/saleshop.jsp");
     }
 	
@@ -243,6 +263,7 @@ public class HomeController {
 	 	List<Item> allaccessories = itemService.getAccessoryItems(accessorytype1);
 		model.addAttribute("allaccessories", allaccessories);
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		return ("views/accessoryshop.jsp");
     }
 	
@@ -251,6 +272,7 @@ public class HomeController {
 		Item item = itemService.getItem(id);
 		model.addAttribute("showitem", item);
 		model.addAttribute("amiadmin", session.getAttribute("isadmin"));
+		model.addAttribute("isloggedin", session.getAttribute("isLoggedIn"));
 		return ("views/showItem.jsp");
 	}
 	

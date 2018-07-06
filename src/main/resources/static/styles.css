@@ -55,9 +55,15 @@ body {
 .cartheader {
 	text-align: right;
 	padding-right: 30px;
+	padding-top: 10px;
 	margin-top: -15px;
 	margin-bottom: -3px;
 	background-color: white;
+}
+
+.cartheader a{
+	text-decoration: none;
+	color: black;
 }
 
 /*.topnav {
@@ -81,6 +87,31 @@ body {
 
 .nav-item {
 	padding: 0 15px;
+}
+
+.coollink::after {
+  content: '';
+  width: 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width .3s;
+}
+
+.coollink:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.coollink:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+
+
+.addtopmargin {
+	margin-top: 160px;
 }
 
 

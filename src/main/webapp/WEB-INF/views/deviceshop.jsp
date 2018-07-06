@@ -25,58 +25,71 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/styles.css">
+	
+	<script src="/javascript/jscript.js"></script>
+	<script src="/javascript/jscript.js"></script>
 </head>
 <body>
 	<div class="saveheader">
-		<p>Get 10% when you use the code SAVE10</p>
+	<p>Get 10% when you use the code SAVE10</p>
 	</div>
-	<div class="cartheader">
-		<p>Sign up  |  Log In  |  Cart
-	</div>
-	<div class="headerlogo">
-		<div class="logo">
-			<img id ="logo1" src="/images/vape3onelogo1.png" alt="logo">
+	<div id="navigation1">
+		<div class="cartheader">
+	
+			<c:if test="${amiadmin == 'yes' }">
+				<a href="/admin">Admin Page |</a>
+			</c:if>
+			<a href="/registration">Sign Up</a> |  
+			<c:if test="${isloggedin == null }">
+				<a href="/login">Log In</a>
+			</c:if> 
+			<c:if test="${isloggedin == 'yes' }">
+				<a href="/logout">Logout</a>
+			</c:if>
+			
+			<!-- change this to a cart icon -->
+			<a href="/cart">  |  Cart</a>
+	
 		</div>
-	</div>
-
-	<div class="container">
-		<div class="wrapper">
-
-
-			<div class="navigation">
-				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				  <a class="navbar-brand" href="/"><img id="logonavbar" src="/images/vape3onetransparent.png" alt="" /></a>
+		<div class="headerlogo">
+			<div class="logo">
+				<a href="/"><img id ="logo1" src="/images/vape3onelogo1.png" alt="logo"></a>
+			</div>
+		</div>
+		<div id="navigation"  class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<div class="d-md-flex d-block flex-row mx-md-auto mx-0">
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
 				  </button>
 				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-				    <ul class="navbar-nav  justify-content-center">
+				    <ul class="navbar-nav justify-content-center">
 				      <li class="nav-item active">
-				        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+				        <a class="nav-link coollink" href="/">Home <span class="sr-only">(current)</span></a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="/sales">Sale</a>
+				        <a class="nav-link coollink" href="/sales">Sale</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="/devices">Devices</a>
+				        <a class="nav-link coollink" href="/devices">Devices</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="/eliquids">E-Liquids</a>
+				        <a class="nav-link coollink" href="/eliquids">E-Liquids</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="/tanks">Tanks</a>
+				        <a class="nav-link coollink" href="/tanks">Tanks</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link" href="/accessories">Accessories</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/brands">Brands</a>
+				        <a class="nav-link coollink" href="/accessories">Accessories</a>
 				      </li>
 				    </ul>
 				  </div>
-				</nav>
-			</div>     <!-- end of navigation div -->
-
+				</div>
+			</nav>
+		</div>     
+	</div><!-- end of navigation1 div -->
+	<div class="wrapper" id="wrapper1">
+		<div class="container">
 		<div class="maincontent1">
 			<div class="row">
 				<div id="leftnavbar" class="col-md-3">
