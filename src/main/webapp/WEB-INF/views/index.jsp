@@ -26,20 +26,7 @@
 
 	<link rel="stylesheet" type="text/css" href="/styles.css">	
 	
-	<script type="text/javascript">
-		$(window).scroll(function() {
-			var scrollPos = $(this).scrollTop();
-			
-			if(scrollPos > 20) {
-				$('#navigation1').addClass('fixed-nav');
-				$('#navigation').removeClass('container');
-			} else {
-				$('#navigation1').removeClass('fixed-nav');
-				$('#navigation').addClass('container');
-			}
-		});
-	
-	</script>
+	<script src="/javascript/jscript.js"></script>
 	
 	
 </head>
@@ -78,35 +65,36 @@
 
 			<div id="navigation"  class="container">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				  <a class="navbar-brand" href="/"><img id="logonavbar" src="/images/vape3onetransparent.png" alt="" /></a>
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				    <span class="navbar-toggler-icon"></span>
-				  </button>
-				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-				    <ul class="navbar-nav  justify-content-center">
-				      <li class="nav-item active">
-				        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/sales">Sale</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/devices">Devices</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/eliquids">E-Liquids</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/tanks">Tanks</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/accessories">Accessories</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="/brands">Brands</a>
-				      </li>
-				    </ul>
-				  </div>
+					<div class="d-md-flex d-block flex-row mx-md-auto mx-0">
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
+					  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+					    <ul class="navbar-nav justify-content-center">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/sales">Sale</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/devices">Devices</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/eliquids">E-Liquids</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/tanks">Tanks</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/accessories">Accessories</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/brands">Brands</a>
+					      </li>
+					    </ul>
+					  </div>
+					</div>
 				</nav>
 			</div>     <!-- end of navigation div -->
 

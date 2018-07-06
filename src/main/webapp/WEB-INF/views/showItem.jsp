@@ -25,30 +25,10 @@
 	
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 	
+	<script src="/javascript/jscript.js"></script>
 	
-	<!-- script for the image gallery -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.smallimagebox img').on ({
-				mouseover: function() {
-					$(this).css({
-						'cursor': 'pointer'
-				/* 		'border-Color': 'pink'; */
-					});
-				}, 
-				mouseout: function() {
-					$(this).css({
-						'cursor': 'default'
-/* 						'border-Color': 'black' */
-					});
-				},
-				click: function() {
-					var imageUrl = $(this).attr('src');
-					$('#mainImage').attr('src', imageUrl);
-				}
-			});
-		});
-	</script>
+
+	
 </head>
 <body>
 	<div class="saveheader">

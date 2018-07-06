@@ -71,7 +71,7 @@ body {
 	position: fixed;
 	top: 0;
 	z-index: 1000;
-	transition: .5s;
+	transition: 1s;
 	padding-top: 15px;
 }
 
@@ -79,8 +79,9 @@ body {
 	width: 100%;
 }
 
-
-
+.nav-item {
+	padding: 0 15px;
+}
 
 
 .aboutusdiv {
