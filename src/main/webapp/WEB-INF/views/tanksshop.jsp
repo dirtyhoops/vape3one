@@ -35,21 +35,18 @@
 	</div>
 	<div id="navigation1">
 		<div class="cartheader">
-	
 			<c:if test="${amiadmin == 'yes' }">
 				<a href="/admin">Admin Page |</a>
 			</c:if>
-			<a href="/registration">Sign Up</a> |  
 			<c:if test="${isloggedin == null }">
-				<a href="/login">Log In</a>
+				<a href="/registration">Sign Up</a> | <a href="/login">Log In</a>
 			</c:if> 
 			<c:if test="${isloggedin == 'yes' }">
 				<a href="/logout">Logout</a>
 			</c:if>
 			
 			<!-- change this to a cart icon -->
-			<a href="/cart">  |  Cart</a>
-	
+			<a href="/cart">  |  <i class="fas fa-shopping-cart"></i></a>
 		</div>
 		<div class="headerlogo">
 			<div class="logo">
@@ -58,14 +55,14 @@
 		</div>
 		<div id="navigation"  class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<div class="d-md-flex d-block flex-row mx-md-auto mx-0">
+				<div class="d-md-flex d-block flex-row mx-lg-auto mx-0">
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
 				  </button>
 				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-				    <ul class="navbar-nav justify-content-center">
+				    <ul class="navbar-nav">
 				      <li class="nav-item active">
-				        <a class="nav-link coollink" href="/">Home <span class="sr-only">(current)</span></a>
+				        <a class="nav-link coollink" href="/">Home</a>
 				      </li>
 				      <li class="nav-item">
 				        <a class="nav-link coollink" href="/sales">Sale</a>
@@ -77,7 +74,7 @@
 				        <a class="nav-link coollink" href="/eliquids">E-Liquids</a>
 				      </li>
 				      <li class="nav-item">
-				        <a class="nav-link coollink" href="/tanks">Tanks</a>
+				        <a class="nav-link coollink" href="/tanks">Tanks <span class="sr-only">(current)</span> </a>
 				      </li>
 				      <li class="nav-item">
 				        <a class="nav-link coollink" href="/accessories">Accessories</a>
