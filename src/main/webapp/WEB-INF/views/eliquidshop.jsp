@@ -54,7 +54,7 @@
 		</div>
 		<div id="navigation"  class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<div class="d-md-flex d-block flex-row mx-lg-auto mx-0">
+				<div class="d-lg-flex d-block flex-row mx-lg-auto mx-0">
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
 				  </button>
